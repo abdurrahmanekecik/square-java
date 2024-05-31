@@ -1,13 +1,12 @@
 package square;
 
 import javax.swing.*;
-import java.util.Collection;
 
 public class form extends JFrame{
     private JPanel panel;
     private JTextField tf;
     private JButton button1;
-    private JEditorPane editorPane1;
+    private JTextArea textArea1;
 
     form() {
         add(panel);
@@ -16,7 +15,28 @@ public class form extends JFrame{
         setVisible(true);
         button1.addActionListener(e -> {
             String text = tf.getText();
-            editorPane1.setText(text);
+            textArea1.setText("");
+            int length = text.length();
+
+            if (length > 1) {
+                // İlk satır
+                textArea1.append(text + "\n");
+
+                // Ara satırlar
+                for (int i = 0; i < length - 1; i++) {
+                    textArea1.append(text.charAt(i) + "");
+                    for (int j = 2; j < length - 1; j++) {
+                        textArea1.append("  ");
+                    }
+                    textArea1.append(text.charAt(length - 1 - i) + "\n");
+                }
+
+                // Son satır
+                for (int i = length - 1; i >= 0; i--) {
+                    textArea1.append(text.charAt(i) + "");
+                }
+            }
+
         });
 
 
