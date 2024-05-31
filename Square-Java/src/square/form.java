@@ -23,9 +23,9 @@ public class form extends JFrame{
                 textArea1.append(text + "\n");
 
                 // Ara satırlar
-                for (int i = 0; i < length - 1; i++) {
+                for (int i = 1; i < length - 1; i++) {
                     textArea1.append(text.charAt(i) + "");
-                    for (int j = 2; j < length - 1; j++) {
+                    for (int j = 1; j < length - 1; j++) {
                         textArea1.append("  ");
                     }
                     textArea1.append(text.charAt(length - 1 - i) + "\n");
